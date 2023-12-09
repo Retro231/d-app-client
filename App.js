@@ -1,12 +1,14 @@
-import { Platform, StyleSheet } from "react-native";
-import { Provider, useDispatch } from "react-redux";
+import { Platform, StyleSheet, View } from "react-native";
+import { Provider, useDispatch, useSelector } from "react-redux";
 import { store } from "./store";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from "react-native-vector-icons/Ionicons";
 import Home from "./screens/BottomTab/Home";
+import Profile from "./screens/BottomTab/Profile";
 import Setting from "./screens/BottomTab/Setting";
+import Progress from "./screens/BottomTab/Progress";
 import PracticeScreen from "./screens/Stack/PracticeScreen";
 import MockScreen from "./screens/Stack/MockScreen";
 import HazardScreen from "./screens/Stack/HazardScreen";
@@ -15,13 +17,22 @@ import HighwayCodeScreen from "./screens/Stack/HighwayCodeScreen";
 import RoadSignScreen from "./screens/Stack/RoadSignScreen";
 import Quiz from "./components/quiz/Quiz";
 import QuizMenu from "./components/quiz/QuizMenu";
-import { getAuth } from "firebase/auth";
-import { collection, getDocs } from "firebase/firestore";
+// import { getAuth } from "firebase/auth";
 import { useEffect } from "react";
-import { child, get, ref } from "firebase/database";
+// import { collection, getDocs } from "firebase/firestore";
+// import { child, get, ref } from "firebase/database";
 import { setQuestionsDB, setVideoQuestionsDB } from "./dbSlice";
 import { ques_db } from "./config/firebase";
-import Profile from "./screens/BottomTab/Profile";
+import {
+  setLogin,
+  setSubscribed,
+  setUserRegInfo,
+} from "./components/auth/authSlice";
+import QuizResult from "./components/quiz/QuizResult";
+import ShowQuizResult from "./components/quiz/ShowQuizResult";
+import HazardClip from "./components/hazardClip/HazardClip";
+import ClipInfo from "./components/hazardClip/ClipInfo";
+import questions from "./api/quesions.json";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -41,44 +52,111 @@ const HomeTab = () => {
             iconName = focused ? "settings" : "settings-outline";
           } else if (rn === "Profile") {
             iconName = focused ? "person" : "person-outline";
+          } else if (rn === "Progress") {
+            iconName = focused ? "trending-up-outline" : "trending-up-outline";
           }
 
           return <Icon name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: `#000`,
+        tabBarActiveTintColor: `#fcd34d`,
+        tabBarStyle: {
+          height: 70,
+          backgroundColor: "#0e1826",
+          position: "absolute",
+          bottom: 20,
+          // borderTopStartRadius: 50,
+          // borderTopEndRadius: 50,
+          borderRadius: 50,
+          marginHorizontal: 5,
+          shadowColor: "black", // Shadow color
+          shadowOffset: { width: 0, height: -4 }, // Offset (x, y)
+          shadowOpacity: 0.5, // Opacity
+          shadowRadius: 4, // Radius
+          elevation: 6, // Elevation for Android (higher values result in a stronger shadow)
+        },
+        tabBarItemStyle: {
+          margin: 10,
+        },
+        style: { backgroundColor: "transparent" },
       })}
     >
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Settings" component={Setting} />
-      <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen name="Progress" component={Progress} />
+      {/* <Tab.Screen name="Settings" component={Setting} /> */}
+      {/* <Tab.Screen name="Profile" component={Profile} /> */}
     </Tab.Navigator>
   );
 };
 
 const HomeStack = () => {
   const dispatch = useDispatch();
-  const auth = getAuth();
+  // useEffect(() => {
+  //   // firbase
+  //   // check if user is subscribed or not.
+  //   const getUserSubInfo = async (uid) => {
+  //     const querySnapshot = await getDocs(
+  //       collection(db, "users", uid, `subscriptionInfo`)
+  //     );
+  //     querySnapshot.forEach((doc) => {
+  //       // console.log(doc.data().subscribe);
+  //       dispatch(setSubscribed(doc.data().subscribe));
+  //     });
+  //   };
+  //   // check if there is any user login
+  //   auth.onAuthStateChanged((authUser) => {
+  //     console.log("The user is ------> ", authUser);
+  //     if (authUser) {
+  //       //the user just logged in/was logged in
+  //       console.log(authUser);
+  //       console.log(authUser.displayName);
+  //       dispatch(setLogin(true));
+
+  //       // for test only ------------------------------>
+  //       dispatch(setSubscribed(true));
+  //       //------------it will change
+
+  //       // getUserSubInfo(authUser.uid);
+  //     } else {
+  //       console.log("No user");
+  //     }
+  //     if (authUser && authUser.displayName !== null) {
+  //       dispatch(
+  //         setUserRegInfo({
+  //           name: authUser.displayName,
+  //           email: authUser.email,
+  //         })
+  //       );
+  //     }
+  //   });
+
+  //   // get question form firebase db
+  //   const getQuestions = async () => {
+  //     const dbRef = ref(ques_db);
+  //     let questions = await get(child(dbRef, `questions`));
+  //     let videoQuestions = await get(child(dbRef, `videoQuestions`));
+  //     if (questions.exists()) {
+  //       // console.log(questions.val());
+  //       dispatch(setQuestionsDB(questions.val()));
+  //     } else {
+  //       console.log("no data found");
+  //     }
+  //     if (videoQuestions.exists()) {
+  //       // console.log(videoQuestions.val());
+  //       dispatch(setVideoQuestionsDB(videoQuestions.val()));
+  //     } else {
+  //       console.log("no data found");
+  //     }
+  //   };
+  //   getQuestions();
+  // }, []);
+
+  // get data from quesions json file.
   useEffect(() => {
-    // get question form firebase db
-    const getQuestions = async () => {
-      const dbRef = ref(ques_db);
-      let questions = await get(child(dbRef, `questions`));
-      let videoQuestions = await get(child(dbRef, `videoQuestions`));
-      if (questions.exists()) {
-        // console.log(questions.val());
-        dispatch(setQuestionsDB(questions.val()));
-      } else {
-        console.log("no data found");
-      }
-      if (videoQuestions.exists()) {
-        // console.log(videoQuestions.val());
-        dispatch(setVideoQuestionsDB(videoQuestions.val()));
-      } else {
-        console.log("no data found");
-      }
-    };
-    getQuestions();
-  }, []);
+    if (questions) {
+      dispatch(setQuestionsDB(questions.questions));
+      dispatch(setVideoQuestionsDB(questions.videoQuestions));
+    }
+  }, []); // Empty dependency array to ensure the effect runs only once
   return (
     <Stack.Navigator
       screenOptions={{
@@ -86,13 +164,18 @@ const HomeStack = () => {
       }}
     >
       <Stack.Screen name="HomeScreen" component={HomeTab} />
+      {/* <Stack.Screen name="HomeScreen" component={QuizResult} /> */}
       <Stack.Screen name="PracticeScreen" component={PracticeScreen} />
       <Stack.Screen name="MockScreen" component={MockScreen} />
       <Stack.Screen name="HazardScreen" component={HazardScreen} />
+      <Stack.Screen name="ClipInfo" component={ClipInfo} />
+      <Stack.Screen name="HazardClip" component={HazardClip} />
       <Stack.Screen name="HighwayCodeScreen" component={HighwayCodeScreen} />
       <Stack.Screen name="RoadSignScreen" component={RoadSignScreen} />
       <Stack.Screen name="QuizScreen" component={Quiz} />
       <Stack.Screen name="QuizMenuScreen" component={QuizMenu} />
+      <Stack.Screen name="QuizResultScreen" component={QuizResult} />
+      <Stack.Screen name="ShowQuizResult" component={ShowQuizResult} />
     </Stack.Navigator>
   );
 };
@@ -110,12 +193,3 @@ export default function App() {
     </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

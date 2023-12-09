@@ -1,14 +1,22 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
+import Icon from "react-native-vector-icons/Ionicons";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const ScreenTitle = ({ title, goBack }) => {
   return (
-    <View style={styles.container}>
-      <TouchableOpacity onPress={goBack}>
-        <Text style={styles.backBtn}>Go Back</Text>
-      </TouchableOpacity>
-      <Text style={styles.title}>{title}</Text>
-    </View>
+    <SafeAreaView>
+      <View style={styles.container}>
+        {goBack ? (
+          <TouchableOpacity onPress={goBack}>
+            <Icon name="arrow-undo" size={34} color={"red"}></Icon>
+          </TouchableOpacity>
+        ) : (
+          <View></View>
+        )}
+        <Text style={styles.title}>{title}</Text>
+      </View>
+    </SafeAreaView>
   );
 };
 
@@ -16,21 +24,17 @@ export default ScreenTitle;
 
 const styles = StyleSheet.create({
   container: {
-    fontSize: 18,
-    backgroundColor: "#0e1826",
     flexDirection: "row",
-    gap: 20,
-  },
-  backBtn: {
-    color: "#000",
-    backgroundColor: "red",
+    justifyContent: "space-between",
+    alignItems: "center",
     paddingHorizontal: 20,
-    padding: 10,
-    fontWeight: "bold",
+    paddingVertical: 10,
+    backgroundColor: "#fcd34d",
   },
   title: {
+    fontSize: 20,
     padding: 10,
-    color: "#fff",
+    color: "#000",
     fontWeight: "bold",
   },
 });

@@ -3,8 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   value: {
     userRegInfo: {
-      name: "user",
-      email: "user@mail.com",
+      name: "",
+      email: "",
     },
     isLogedin: true,
     isSubscribed: false,

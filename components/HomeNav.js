@@ -19,11 +19,11 @@ const data = [
     title: "Hazard Percepton",
     screen: "HazardScreen", //change in future...
   },
-  {
-    id: "4",
-    title: "Highway Code",
-    screen: "HighwayCodeScreen", //change in future...
-  },
+  // {
+  //   id: "4",
+  //   title: "Highway Code",
+  //   screen: "HighwayCodeScreen", //change in future...
+  // },
   {
     id: "5",
     title: "Road Sign",
@@ -61,6 +61,7 @@ export default HomeNav;
 const styles = StyleSheet.create({
   container: {
     padding: 10,
+    backgroundColor: "#cbd5e1",
   },
   row: {
     flexDirection: "row",
@@ -74,11 +75,12 @@ const styles = StyleSheet.create({
     marginBottom: 6,
     borderRadius: 4,
     borderWidth: 1,
-    borderColor: "#fcd34d",
+    borderColor: "#0e1826",
   },
   text: {
     textAlign: "center",
     fontWeight: "bold",
     fontSize: 20,
+    color: "#0e1826",
   },
 });

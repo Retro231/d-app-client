@@ -5,6 +5,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image,
+  FlatList,
 } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
@@ -13,7 +14,9 @@ import categoryList from "../../api/categoryList";
 import Header from "../../components/Header";
 import ScreenTitle from "../../components/ScreenTitle";
 import { useDispatch, useSelector } from "react-redux";
-import { setQuestions } from "../../components/quiz/quizSlice";
+import { setQuestions, setTestState } from "../../components/quiz/quizSlice";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const CategoryBtn = ({ item }) => {
   const navigation = useNavigation();
@@ -24,7 +27,6 @@ const CategoryBtn = ({ item }) => {
   const handlePress = () => {
     // getQuestons by Category
     const categoryId = item.id;
-    console.log(categoryId);
     const categoryQuestion = questionsDB.filter((item) => {
       if (categoryId !== 0) {
         return item.category === categoryId;
@@ -33,7 +35,13 @@ const CategoryBtn = ({ item }) => {
       }
     });
 
-    dispatch(setQuestions(categoryQuestion));
+    {
+      item.title !== "Video"
+        ? dispatch(setQuestions(categoryQuestion))
+        : dispatch(setQuestions(videoQuestionsDB));
+    }
+
+    dispatch(setTestState("practice"));
     navigation.navigate("QuizMenuScreen", { title: item.title });
 
     // if (isLogedin) {
@@ -66,25 +74,43 @@ const CategoryBtn = ({ item }) => {
 };
 
 const PracticeScreen = () => {
+  const [data, setData] = useState([]);
   const navigation = useNavigation();
-  const handleGoBack = () => {
-    navigation.goBack(null);
-  };
+
+  useEffect(() => {
+    setData([
+      ...categoryList,
+      {
+        id: "video",
+        title: "Video",
+        iconName: "videoIcon.png",
+      },
+    ]);
+  }, []);
+
   return (
     <>
-      <Header />
-      <ScreenTitle title={`Practice By Category`} goBack={handleGoBack} />
+      <ScreenTitle
+        title={`Practice By Category`}
+        goBack={() => navigation.goBack(null)}
+      />
       <View style={styles.container}>
-        <ScrollView
-          showsHorizontalScrollIndicator={false}
-          showsVerticalScrollIndicator={false}
-        >
-          <View style={styles.row}>
-            {categoryList.map((item) => (
+        <FlatList
+          data={data}
+          numColumns={2}
+          columnWrapperStyle={{
+            margin: 2,
+            padding: 1,
+            columnGap: 5,
+            justifyContent: "center",
+          }}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => (
+            <View style={styles.item}>
               <CategoryBtn key={item.id} item={item} />
-            ))}
-          </View>
-        </ScrollView>
+            </View>
+          )}
+        />
       </View>
     </>
   );
@@ -94,28 +120,27 @@ export default PracticeScreen;
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
-    marginBottom: 140,
+    flex: 1,
+    paddingTop: 5,
+    backgroundColor: "#cbd5e1",
   },
-  row: {
-    flexDirection: "row",
-    flexWrap: "wrap",
+  item: {
+    width: "48%",
+    paddingHorizontal: 10,
+    paddingVertical: 30,
+    backgroundColor: "#d1d5db",
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: "#0e1826",
   },
   singleNav: {
     alignItems: "center",
     flexDirection: "column",
-    minWidth: "100%",
-    paddingHorizontal: 10,
-    paddingVertical: 30,
-    backgroundColor: "#d1d5db",
-    marginBottom: 6,
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: "#fcd34d",
   },
   text: {
     textAlign: "center",
     fontWeight: "bold",
-    fontSize: 20,
+    fontSize: 16,
+    color: "#0e1826",
   },
 });

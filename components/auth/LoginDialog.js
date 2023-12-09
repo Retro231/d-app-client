@@ -1,9 +1,10 @@
 import { Text, View, TextInput, Button, Alert, StyleSheet } from "react-native";
 import React from "react";
-import { Dialog } from "@rneui/themed";
+import { Dialog, Divider } from "@rneui/themed";
 import { useForm, Controller } from "react-hook-form";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
+import LoginWithGmail from "./LoginWithGmail";
 
 const LoginDialog = ({ isVisible, onBackdropPress }) => {
   const [serverError, handleServerError] = useState();
@@ -13,6 +14,7 @@ const LoginDialog = ({ isVisible, onBackdropPress }) => {
     control,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     defaultValues: {
       email: "",
@@ -45,6 +47,11 @@ const LoginDialog = ({ isVisible, onBackdropPress }) => {
       );
       console.log(userCredential);
       setLoading(false);
+      reset({
+        email: "",
+        password: "",
+      });
+      onBackdropPress();
     } catch (error) {
       handleServerError(firebaseErrorHandler(error));
       setLoading(false);
@@ -98,6 +105,22 @@ const LoginDialog = ({ isVisible, onBackdropPress }) => {
         <Dialog.Actions>
           <Dialog.Button title="login" onPress={handleSubmit(onSubmit)} />
         </Dialog.Actions>
+      </View>
+      <Divider />
+      <Text style={{ textAlign: "center", marginVertical: 10, color: "gray" }}>
+        Login With
+      </Text>
+      <View
+        style={{
+          textAlign: "center",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <LoginWithGmail
+          btnText={"Login With Gmail"}
+          onBackdropPress={onBackdropPress}
+        />
       </View>
 
       {/* <Dialog.Actions>

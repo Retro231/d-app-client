@@ -3,14 +3,20 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../components/Header";
 import { useNavigation } from "@react-navigation/native";
 import HomeNav from "../../components/HomeNav";
+import { StyleSheet, View } from "react-native";
 const Home = () => {
-  const navigation = useNavigation();
   return (
-    <SafeAreaView>
+    <View style={styles.container}>
       <Header />
       <HomeNav />
-    </SafeAreaView>
+    </View>
   );
 };
 
 export default Home;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#cbd5e1",
+    height: "100%",
+  },
+});
