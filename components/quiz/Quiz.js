@@ -160,7 +160,10 @@ const Quiz = () => {
             // This will continue the action that had triggered the removal of the screen
             onPress: () => {
               navigation.dispatch(e.data.action);
-              navigation.navigate("PracticeScreen");
+
+              testState === "practice"
+                ? navigation.navigate("PracticeScreen")
+                : navigation.navigate("MockScreen");
               dispatch(resetQuiz());
             },
           },
@@ -172,7 +175,7 @@ const Quiz = () => {
 
   return (
     <>
-      <SafeAreaView style={{ backgroundColor: "#cbd5e1", height: "100%" }}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: "#cbd5e1" }}>
         <ScrollView
           style={{ marginBottom: 30 }}
           showsHorizontalScrollIndicator={false}

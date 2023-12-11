@@ -39,18 +39,17 @@ const HomeNav = () => {
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
       >
-        <View style={styles.row}>
-          {data.map((item) => (
-            <TouchableOpacity
-              key={item.id}
-              onPress={() => navigation.navigate(item.screen)}
-            >
-              <View style={styles.singleNav}>
-                <Text style={styles.text}>{item.title}</Text>
-              </View>
-            </TouchableOpacity>
-          ))}
-        </View>
+        {data.map((item) => (
+          <TouchableOpacity
+            style={styles.singleNav}
+            key={item.id}
+            onPress={() => navigation.navigate(item.screen)}
+          >
+            <View>
+              <Text style={styles.text}>{item.title}</Text>
+            </View>
+          </TouchableOpacity>
+        ))}
       </ScrollView>
     </View>
   );
@@ -60,13 +59,14 @@ export default HomeNav;
 
 const styles = StyleSheet.create({
   container: {
+    flex: 3,
     padding: 10,
     backgroundColor: "#cbd5e1",
   },
-  row: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-  },
+  // row: {
+  //   flexDirection: "row",
+  //   flexWrap: "wrap",
+  // },
   singleNav: {
     minWidth: "100%",
     paddingHorizontal: 10,

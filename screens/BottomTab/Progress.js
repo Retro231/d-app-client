@@ -106,10 +106,14 @@ const Progress = () => {
     getStoredData(testState);
   };
 
+  useEffect(() => {
+    handleRefresh();
+  }, []);
+
   return (
-    <View style={{ backgroundColor: "#cbd5e1", height: "100%" }}>
+    <>
       <ScreenTitle title={`Progress`} />
-      <>
+      <View style={{ backgroundColor: "#cbd5e1", flex: 1 }}>
         <View style={styles.topBtnArea}>
           <TouchableOpacity
             style={[
@@ -140,52 +144,50 @@ const Progress = () => {
           </TouchableOpacity>
         </View>
         {/* ---------------- */}
-      </>
-      <View>
-        <View style={styles.container}>
-          <View>
-            {/* <Text>Bezier Line Chart</Text> */}
-            {chartLebels.length !== 0 ? (
-              <BarChart
-                data={{
-                  labels: chartLebels,
-                  datasets: [
-                    {
-                      data: chartDataSets,
-                    },
-                  ],
-                }}
-                width={Dimensions.get("window").width + 1}
-                height={300}
-                yAxisSuffix="%"
-                chartConfig={{
-                  color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                  strokeWidth: 3, // optional, default 3
-                  barPercentage: 1,
-                  useShadowColorFromDataset: false, // optional
-                }}
-                verticalLabelRotation={15}
-                showValuesOnTopOfBars
-                style={{
-                  marginVertical: 20,
-                }}
-              />
-            ) : (
-              <View
-                style={{
-                  width: Dimensions.get("window").width + 1,
-                  height: 300,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  gap: 10,
-                }}
-              >
-                <Text>No tests taken. Please take a test to see progress.</Text>
-                <Button color={"secondary"}>Give a Test</Button>
-              </View>
-            )}
-          </View>
+        <View>
+          {/* <Text>Bezier Line Chart</Text> */}
+          {chartLebels.length !== 0 ? (
+            <BarChart
+              data={{
+                labels: chartLebels,
+                datasets: [
+                  {
+                    data: chartDataSets,
+                  },
+                ],
+              }}
+              width={Dimensions.get("window").width + 1}
+              height={390}
+              yAxisSuffix="%"
+              chartConfig={{
+                color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+                strokeWidth: 3, // optional, default 3
+                barPercentage: 1,
+                useShadowColorFromDataset: false, // optional
+              }}
+              verticalLabelRotation={15}
+              showValuesOnTopOfBars
+              style={{
+                // marginVertical: 20,
+                marginBottom: 20,
+                marginTop: 1,
+              }}
+            />
+          ) : (
+            <View
+              style={{
+                width: Dimensions.get("window").width + 1,
+                height: 300,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: 10,
+              }}
+            >
+              <Text>No tests taken. Please take a test to see progress.</Text>
+              <Button color={"secondary"}>Give a Test</Button>
+            </View>
+          )}
         </View>
         <View
           style={{
@@ -195,23 +197,26 @@ const Progress = () => {
             gap: 10,
           }}
         >
-          <Button title={"Reset Progress"} onPress={handleReset} />
+          <Button
+            title={"Reset Progress"}
+            color={"error"}
+            onPress={handleReset}
+          />
           <Button title={"Refresh"} onPress={handleRefresh} />
         </View>
       </View>
-    </View>
+    </>
   );
 };
 
 export default Progress;
 
 const styles = StyleSheet.create({
-  container: {},
   topBtnArea: {
     flexDirection: "row",
     width: "100%",
-    gap: 1,
-    marginVertical: 1,
+    gap: 2,
+    marginTop: 1,
   },
   topBtn: {
     flex: 1,

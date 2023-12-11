@@ -9,6 +9,7 @@ import {
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation, useRoute } from "@react-navigation/native";
+import { BackHandler } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 // import { getAuth } from "firebase/auth";s
 import ScreenTitle from "../ScreenTitle";
@@ -166,19 +167,6 @@ const QuizResult = () => {
     });
   };
 
-  // console.log(pass);
-  // console.log(fail);
-  // console.log(testState);
-  // console.log(regAns);
-
-  // const handleGoBack = () => {
-  // dispatch(resetQuiz());
-  // // if (testState === "practice") {
-  // //   navigation.navigate("PracticeScreen");
-  // // }
-  // navigation.navigate("Home");
-  // };
-
   const getButtonStatus = () => {
     if (isActive.allQ === true) {
       return questions;
@@ -202,143 +190,159 @@ const QuizResult = () => {
     }
   };
 
-  // preventing going back
+  useEffect(() => {
+    // Add event listener for hardware back button press
+    const backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      handleGoBack
+    );
+
+    // Remove event listener when the component is unmounted
+    return () => backHandler.remove();
+  }, []);
 
   const handleGoBack = () => {
     navigation.navigate("HomeScreen");
+    return true;
   };
 
   return (
-    <SafeAreaView>
+    <>
       <ScreenTitle title={`Result`} goBack={handleGoBack} />
-      <View style={styles.container}>
-        <View style={styles.leaderBoard}>
-          {testState != "practice" && (
-            <>
-              <View style={styles.status}>
-                {correctlyAnsweredQuestions.length >= 43 ? (
-                  <>
-                    <Icon name="happy-outline" size={36} color={"green"}></Icon>
-                    <Text style={{ fontSize: 20, fontWeight: "bold" }}>
-                      Passed
-                    </Text>
-                  </>
-                ) : (
-                  <>
-                    <Icon name="sad-outline" size={36} color={"gray"}></Icon>
-                    <Text style={{ fontSize: 20, fontWeight: "bold" }}>
-                      Failed
-                    </Text>
-                  </>
-                )}
-              </View>
-              <Divider style={{ width: "60%" }} />
-            </>
-          )}
-
-          <View>
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <Icon
-                name={`checkmark-circle-outline`}
-                size={24}
-                color={"green"}
-              ></Icon>
-              <Text style={styles.leaderBoardText}>
-                Correct Ans: {correctlyAnsweredQuestions.length}
-              </Text>
-            </View>
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <Icon
-                name={`close-circle-outline`}
-                size={24}
-                color={"red"}
-              ></Icon>
-              <Text style={styles.leaderBoardText}>
-                Wrong Ans: {wronglyAnsweredQuestions.length}
-              </Text>
-            </View>
-          </View>
-        </View>
-        <View style={styles.topBtnArea}>
-          <TouchableOpacity
-            style={[
-              styles.topBtn,
-              { backgroundColor: isActive.allQ ? "#fcd34d" : "gray" },
-            ]}
-            onPress={handleAllBtn}
-          >
-            <Text style={styles.topBtnText}>All</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[
-              styles.topBtn,
-              { backgroundColor: isActive.correctQ ? "#fcd34d" : "gray" },
-            ]}
-            onPress={handleCorrectBtn}
-          >
-            <Text style={styles.topBtnText}>Correct</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[
-              styles.topBtn,
-              { backgroundColor: isActive.incorrectQ ? "#fcd34d" : "gray" },
-            ]}
-            onPress={handleIncorrectBtn}
-          >
-            <Text style={styles.topBtnText}>Incorrect</Text>
-          </TouchableOpacity>
-        </View>
-        {/* ---------------- */}
-        <View>
-          <FlatList
-            style={{ marginBottom: testState !== "practice" ? 1600 : 550 }}
-            showsHorizontalScrollIndicator={false}
-            showsVerticalScrollIndicator={false}
-            data={getButtonStatus()}
-            keyExtractor={(item) => item.id.toString()}
-            renderItem={({ item, index }) => (
+      <SafeAreaView style={{ flex: 1, backgroundColor: "#cbd5e1" }}>
+        <View style={styles.container}>
+          <View style={styles.leaderBoard}>
+            {testState != "practice" && (
               <>
-                <TouchableOpacity
-                  onPress={() =>
-                    navigation.navigate("ShowQuizResult", { id: item.id })
-                  }
-                  style={{
-                    margin: 4,
-                    padding: 4,
-                    flexDirection: "row",
-                    width: "100%",
-                    alignItems: "center",
-                  }}
-                >
-                  <Icon
-                    style={{ width: "10%" }}
-                    name={
-                      getQuesionStatus(item.id, item.correctAnswer)
-                        ? `checkmark-circle-outline`
-                        : `close-circle-outline`
-                    }
-                    size={24}
-                    color={
-                      getQuesionStatus(item.id, item.correctAnswer)
-                        ? `green`
-                        : `red`
-                    }
-                  ></Icon>
-                  <Text style={{ fontSize: 15, width: "80%" }}>
-                    {item.id}. {item.question}
-                  </Text>
-                  <Icon
-                    style={{ width: "10%" }}
-                    name="chevron-forward-outline"
-                    size={24}
-                  />
-                </TouchableOpacity>
+                <View style={styles.status}>
+                  {correctlyAnsweredQuestions.length >= 43 ? (
+                    <>
+                      <Icon
+                        name="happy-outline"
+                        size={36}
+                        color={"green"}
+                      ></Icon>
+                      <Text style={{ fontSize: 20, fontWeight: "bold" }}>
+                        Passed
+                      </Text>
+                    </>
+                  ) : (
+                    <>
+                      <Icon name="sad-outline" size={36} color={"gray"}></Icon>
+                      <Text style={{ fontSize: 20, fontWeight: "bold" }}>
+                        Failed
+                      </Text>
+                    </>
+                  )}
+                </View>
+                <Divider style={{ width: "60%" }} />
               </>
             )}
-          />
+
+            <View>
+              <View style={{ flexDirection: "row", alignItems: "center" }}>
+                <Icon
+                  name={`checkmark-circle-outline`}
+                  size={24}
+                  color={"green"}
+                ></Icon>
+                <Text style={styles.leaderBoardText}>
+                  Correct Ans: {correctlyAnsweredQuestions.length}
+                </Text>
+              </View>
+              <View style={{ flexDirection: "row", alignItems: "center" }}>
+                <Icon
+                  name={`close-circle-outline`}
+                  size={24}
+                  color={"red"}
+                ></Icon>
+                <Text style={styles.leaderBoardText}>
+                  Wrong Ans: {wronglyAnsweredQuestions.length}
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View style={styles.topBtnArea}>
+            <TouchableOpacity
+              style={[
+                styles.topBtn,
+                { backgroundColor: isActive.allQ ? "#fcd34d" : "gray" },
+              ]}
+              onPress={handleAllBtn}
+            >
+              <Text style={styles.topBtnText}>All</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[
+                styles.topBtn,
+                { backgroundColor: isActive.correctQ ? "#fcd34d" : "gray" },
+              ]}
+              onPress={handleCorrectBtn}
+            >
+              <Text style={styles.topBtnText}>Correct</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[
+                styles.topBtn,
+                { backgroundColor: isActive.incorrectQ ? "#fcd34d" : "gray" },
+              ]}
+              onPress={handleIncorrectBtn}
+            >
+              <Text style={styles.topBtnText}>Incorrect</Text>
+            </TouchableOpacity>
+          </View>
+          {/* ---------------- */}
+          <View style={{ flex: 1 }}>
+            <FlatList
+              // style={{ marginBottom: testState !== "practice" ? 1600 : 550 }}
+              showsHorizontalScrollIndicator={false}
+              showsVerticalScrollIndicator={false}
+              data={getButtonStatus()}
+              keyExtractor={(item) => item.id.toString()}
+              renderItem={({ item, index }) => (
+                <>
+                  <TouchableOpacity
+                    onPress={() =>
+                      navigation.navigate("ShowQuizResult", { id: item.id })
+                    }
+                    style={{
+                      margin: 4,
+                      padding: 4,
+                      flexDirection: "row",
+                      width: "100%",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Icon
+                      style={{ width: "10%" }}
+                      name={
+                        getQuesionStatus(item.id, item.correctAnswer)
+                          ? `checkmark-circle-outline`
+                          : `close-circle-outline`
+                      }
+                      size={24}
+                      color={
+                        getQuesionStatus(item.id, item.correctAnswer)
+                          ? `green`
+                          : `red`
+                      }
+                    ></Icon>
+                    <Text style={{ fontSize: 15, width: "80%" }}>
+                      {item.id}. {item.question}
+                    </Text>
+                    <Icon
+                      style={{ width: "10%" }}
+                      name="chevron-forward-outline"
+                      size={24}
+                    />
+                  </TouchableOpacity>
+                </>
+              )}
+            />
+          </View>
         </View>
-      </View>
-    </SafeAreaView>
+      </SafeAreaView>
+    </>
   );
 };
 
@@ -346,6 +350,7 @@ export default QuizResult;
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     paddingHorizontal: 20,
     paddingTop: 10,
   },

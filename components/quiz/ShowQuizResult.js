@@ -45,8 +45,8 @@ const ShowQuizResult = () => {
   if (question) {
     return (
       <>
-        <SafeAreaView>
-          <ScreenTitle title={"Result"} goBack={handleGoBack} />
+        <ScreenTitle title={"Result"} goBack={handleGoBack} />
+        <SafeAreaView style={{ flex: 1, backgroundColor: "#cbd5e1" }}>
           <ScrollView
             style={{ marginBottom: 30 }}
             showsHorizontalScrollIndicator={false}

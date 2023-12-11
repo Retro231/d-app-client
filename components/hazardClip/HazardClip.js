@@ -71,6 +71,7 @@ const HazardClip = () => {
     setRate([1]);
     setLimitExit(false);
     setEnd(false);
+    setDataSaved(false);
   };
   // const handleSave = () => {
   //   const user = auth.currentUser;
@@ -118,10 +119,10 @@ const HazardClip = () => {
 
       // Save the updated array back to AsyncStorage
       await AsyncStorage.setItem(key, JSON.stringify(existingObjects));
+      setDataSaved(true);
       setTimeout(() => {
-        setDataSaved(true);
+        setDataSaved(false);
       }, 2000);
-      setDataSaved(false);
     } catch (error) {
       console.error("Error storing object:", error);
     }
@@ -156,6 +157,7 @@ const HazardClip = () => {
     setPlay(false);
     setPlaying(false);
     showLoginRequest(false);
+    setDataSaved(false);
     console.log(hazard);
     console.log(flag);
     hazard.map((hazardItem) => {

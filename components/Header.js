@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 const Header = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.logoContainer}>
         <Image
           style={[{ width: 80, height: 80, resizeMode: "contain" }]}

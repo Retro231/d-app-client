@@ -33,6 +33,7 @@ import ShowQuizResult from "./components/quiz/ShowQuizResult";
 import HazardClip from "./components/hazardClip/HazardClip";
 import ClipInfo from "./components/hazardClip/ClipInfo";
 import questions from "./api/quesions.json";
+import Test from "./screens/BottomTab/Test";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -63,7 +64,7 @@ const HomeTab = () => {
           height: 70,
           backgroundColor: "#0e1826",
           position: "absolute",
-          bottom: 20,
+          bottom: 0,
           // borderTopStartRadius: 50,
           // borderTopEndRadius: 50,
           borderRadius: 50,
@@ -82,6 +83,7 @@ const HomeTab = () => {
     >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Progress" component={Progress} />
+      <Tab.Screen name="Test" component={Test} />
       {/* <Tab.Screen name="Settings" component={Setting} /> */}
       {/* <Tab.Screen name="Profile" component={Profile} /> */}
     </Tab.Navigator>
