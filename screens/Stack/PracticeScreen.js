@@ -59,13 +59,14 @@ const CategoryBtn = ({ item }) => {
     <View>
       <TouchableOpacity onPress={handlePress}>
         <View style={styles.singleNav}>
-          <Image
+          {/* <Image
             height={50}
             width={50}
             source={{
-              uri: `http://appsbreaking.com/category_image/${item.iconName}`,
+              uri: `https://appsbreaking.com/category_image/${item.iconName}`,
             }}
-          />
+          /> */}
+          <Image style={{ width: 50, height: 50 }} source={item.iconName} />
           <Text style={styles.text}>{item.title}</Text>
         </View>
       </TouchableOpacity>
@@ -83,7 +84,7 @@ const PracticeScreen = () => {
       {
         id: "video",
         title: "Video",
-        iconName: "videoIcon.png",
+        iconName: require("../../assets/catIcons/videoIcon.png"),
       },
     ]);
   }, []);

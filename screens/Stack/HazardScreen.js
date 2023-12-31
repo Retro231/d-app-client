@@ -16,7 +16,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { setQuestions, setTestState } from "../../components/quiz/quizSlice";
 import { useIsFocused } from "@react-navigation/native";
 import { changeScreenOrientationPortrait } from "../../appSlice";
-
+import { changeScreenOrientationLandscape } from "../../appSlice";
+import { LogBox } from "react-native";
+LogBox.ignoreLogs(["new NativeEventEmitter()"]);
 const hazardQuestionsDB = [
   {
     id: 1,
@@ -63,18 +65,20 @@ const HazardBtn = ({ item }) => {
 
     dispatch(setTestState("hazard"));
     navigation.navigate("ClipInfo", { title: item.title });
+    dispatch(changeScreenOrientationLandscape());
   };
   return (
     <View>
       <TouchableOpacity onPress={handlePress}>
         <View style={styles.singleNav}>
-          <Image
+          {/* <Image
             height={50}
             width={50}
-            source={{
-              uri: `http://appsbreaking.com/category_image/${item.iconName}`,
-            }}
-          />
+            // source={{
+            //   uri: `https://appsbreaking.com/category_image/${item.iconName}`,
+            // }}
+            source={require(`./../../assets/catIcons/${item.iconName}`)}
+          /> */}
           <Text style={styles.text}>{item.title}</Text>
         </View>
       </TouchableOpacity>

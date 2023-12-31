@@ -1,3 +1,4 @@
+import "expo-dev-client";
 import { Platform, StyleSheet, View } from "react-native";
 import { Provider, useDispatch, useSelector } from "react-redux";
 import { store } from "./store";
@@ -32,9 +33,10 @@ import QuizResult from "./components/quiz/QuizResult";
 import ShowQuizResult from "./components/quiz/ShowQuizResult";
 import HazardClip from "./components/hazardClip/HazardClip";
 import ClipInfo from "./components/hazardClip/ClipInfo";
-import questions from "./api/quesions.json";
+// import questions from "./api/quesions.json";
+import questions from "./api/questionList";
+import videoQuestions from "./api/videoQuesions";
 import Test from "./screens/BottomTab/Test";
-
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
@@ -83,7 +85,7 @@ const HomeTab = () => {
     >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Progress" component={Progress} />
-      <Tab.Screen name="Test" component={Test} />
+      {/* <Tab.Screen name="Test" component={Test} /> */}
       {/* <Tab.Screen name="Settings" component={Setting} /> */}
       {/* <Tab.Screen name="Profile" component={Profile} /> */}
     </Tab.Navigator>
@@ -154,9 +156,9 @@ const HomeStack = () => {
 
   // get data from quesions json file.
   useEffect(() => {
-    if (questions) {
-      dispatch(setQuestionsDB(questions.questions));
-      dispatch(setVideoQuestionsDB(questions.videoQuestions));
+    if (questions && videoQuestions) {
+      dispatch(setQuestionsDB(questions));
+      dispatch(setVideoQuestionsDB(videoQuestions));
     }
   }, []); // Empty dependency array to ensure the effect runs only once
   return (

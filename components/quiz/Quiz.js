@@ -1,11 +1,11 @@
 import {
   Alert,
-  Image,
   ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
+  Image,
   ActivityIndicator,
 } from "react-native";
 import React, { useEffect, useState, useRef } from "react";
@@ -21,7 +21,6 @@ import MyVideoPlayer from "../MyVideoPlayer";
 import video2 from "./../../assets/video/video_2.mp4";
 import video3 from "./../../assets/video/video_3.mp4";
 import video4 from "./../../assets/video/video_4.mp4";
-
 const getVideo = (id) => {
   const videoArray = [video2, video3, video4];
 
@@ -47,7 +46,6 @@ const Quiz = () => {
   const { question, answers, correctAnswer, mediaType, content } =
     questions[currentIndex];
   const hasUnsavedChanges = Boolean(question);
-
   // timer
   let timerInterval;
   useEffect(() => {
@@ -208,8 +206,7 @@ const Quiz = () => {
               <Image
                 height={230}
                 width={300}
-                resizeMode="contain"
-                source={{ uri: `http://appsbreaking.com/qimage/${content}` }}
+                source={{ uri: `https://i.ibb.co/Rb9V1dX/${content}` }}
                 alt="content"
               />
             )}

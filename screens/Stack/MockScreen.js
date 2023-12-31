@@ -4,8 +4,8 @@ import {
   ScrollView,
   StyleSheet,
   TouchableOpacity,
-  Image,
   FlatList,
+  Image,
 } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
@@ -13,14 +13,12 @@ import mockTestList from "../../api/mockTestList";
 import ScreenTitle from "../../components/ScreenTitle";
 import { useDispatch, useSelector } from "react-redux";
 import { setQuestions, setTestState } from "../../components/quiz/quizSlice";
-
 const MockBtn = ({ item }) => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const { questionsDB, videoQuestionsDB } = useSelector(
     (state) => state.db.value
   );
-
   const getUniqueIds = (questions) => {
     // Step 1: Create an array of unique IDs
     const uniqueIds = questions.map((item) => item.id);
@@ -66,13 +64,7 @@ const MockBtn = ({ item }) => {
     <View>
       <TouchableOpacity onPress={handlePress}>
         <View style={styles.singleNav}>
-          <Image
-            height={50}
-            width={50}
-            source={{
-              uri: `http://appsbreaking.com/category_image/${item.iconName}`,
-            }}
-          />
+          <Image style={{ width: 50, height: 50 }} source={item.iconName} />
           <Text style={styles.text}>{item.title}</Text>
         </View>
       </TouchableOpacity>

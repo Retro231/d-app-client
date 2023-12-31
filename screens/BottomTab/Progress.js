@@ -92,6 +92,16 @@ const Progress = () => {
     navigation.navigate("HomeScreen");
   };
 
+  const handleGiveTest = () => {
+    if (testState === "practice") {
+      navigation.navigate("PracticeScreen");
+    } else if (testState === "mock") {
+      navigation.navigate("MockScreen");
+    } else if (testState === "hazard") {
+      navigation.navigate("HazardScreen");
+    }
+  };
+
   const handleReset = async () => {
     try {
       await AsyncStorage.removeItem(testState);
@@ -185,7 +195,9 @@ const Progress = () => {
               }}
             >
               <Text>No tests taken. Please take a test to see progress.</Text>
-              <Button color={"secondary"}>Give a Test</Button>
+              <Button color={"secondary"} onPress={handleGiveTest}>
+                Give a Test
+              </Button>
             </View>
           )}
         </View>

@@ -342,12 +342,7 @@
       "question": "You're turning right onto a dual carriageway. What should you do before emerging?"
     },
     {
-      "answers": [
-        "Lorries",
-        "Buses",
-        "Motorcyclists",
-        "Coaches"
-      ],
+      "answers": ["Lorries", "Buses", "Motorcyclists", "Coaches"],
       "category": 1,
       "content": "BB1633.jpg",
       "correctAnswer": 2,
@@ -428,12 +423,7 @@
       "question": "What will happen if you follow this vehicle too closely?"
     },
     {
-      "answers": [
-        "One second",
-        "Two seconds",
-        "Three seconds",
-        "Four seconds"
-      ],
+      "answers": ["One second", "Two seconds", "Three seconds", "Four seconds"],
       "category": 2,
       "correctAnswer": 3,
       "explanation": "Water will reduce your tyres' grip on the road. The safe separation gap of at least two seconds in dry conditions should be doubled, to at least four seconds, in wet weather.",
@@ -484,12 +474,7 @@
       "question": "What should you do if you're being followed by an ambulance showing flashing blue lights?"
     },
     {
-      "answers": [
-        "Fire engine",
-        "Road gritter",
-        "Ambulance",
-        "Doctor's car"
-      ],
+      "answers": ["Fire engine", "Road gritter", "Ambulance", "Doctor's car"],
       "category": 2,
       "correctAnswer": 3,
       "explanation": "A green flashing beacon on a vehicle means the driver or passenger is a doctor on an emergency call. Give way to them if it's safe to do so. Be aware that the vehicle may be travelling quickly or may stop in a hurry.",
@@ -513,12 +498,7 @@
       "question": "Who should obey diamond-shaped traffic signs?"
     },
     {
-      "answers": [
-        "Cars",
-        "Cycles",
-        "Buses",
-        "Lorries"
-      ],
+      "answers": ["Cars", "Cycles", "Buses", "Lorries"],
       "category": 2,
       "correctAnswer": 1,
       "explanation": "The narrow wheels of a bicycle can become stuck in the tram rails, causing the cyclist to stop suddenly, wobble or even lose balance altogether. The tramlines are also slippery, which could cause a cyclist to slide or fall off.",
@@ -569,12 +549,7 @@
       "question": "You wish to turn right ahead. Why should you take up the correct position in good time?"
     },
     {
-      "answers": [
-        "Toucan",
-        "Puffin",
-        "Pelican",
-        "Zebra"
-      ],
+      "answers": ["Toucan", "Puffin", "Pelican", "Zebra"],
       "category": 2,
       "correctAnswer": 0,
       "explanation": "A toucan crossing is designed to allow pedestrians and cyclists to cross at the same time. Look out for cyclists approaching the crossing at speed.",
@@ -893,12 +868,7 @@
       "question": "What should you do to avoid fuel spillage?"
     },
     {
-      "answers": [
-        "Considerate",
-        "Defensive",
-        "Competitive",
-        "Responsible"
-      ],
+      "answers": ["Considerate", "Defensive", "Competitive", "Responsible"],
       "category": 2,
       "correctAnswer": 2,
       "explanation": "Competitive driving increases the risks to everyone and is the opposite of responsible, considerate and defensive driving. Defensive driving is about questioning the actions of other road users and being prepared for the unexpected. Don't be taken by surprise.",
@@ -1315,12 +1285,7 @@
       "question": "What makes your tyres illegal?"
     },
     {
-      "answers": [
-        "1 mm",
-        "1.6 mm",
-        "2.5 mm",
-        "4 mm"
-      ],
+      "answers": ["1 mm", "1.6 mm", "2.5 mm", "4 mm"],
       "category": 12,
       "correctAnswer": 1,
       "explanation": "Car tyres must have sufficient depth of tread to give them a good grip on the road surface. The legal minimum for cars is 1.6 mm. This depth should be across the central three-quarters of the breadth of the tyre and around the entire circumference.",
@@ -1413,12 +1378,7 @@
       "question": "What part of the car does the law require you to keep in good condition?"
     },
     {
-      "answers": [
-        "About 5%",
-        "About 15%",
-        "About 75%",
-        "About 100%"
-      ],
+      "answers": ["About 5%", "About 15%", "About 75%", "About 100%"],
       "category": 12,
       "correctAnswer": 1,
       "explanation": "Your vehicle will use less fuel if you avoid heavy acceleration. The higher the engine revs, the more fuel you'll use. Using the same gear, and covering the same distance, a vehicle travelling at 70 mph will use about 15% more fuel than it would at 50 mph. However, don’t travel so slowly that you inconvenience or endanger other road users.",
@@ -1455,12 +1415,7 @@
       "question": "What will happen if your car's wheels are unbalanced?"
     },
     {
-      "answers": [
-        "The gearbox",
-        "The engine",
-        "The brakes",
-        "The tyres"
-      ],
+      "answers": ["The gearbox", "The engine", "The brakes", "The tyres"],
       "category": 12,
       "correctAnswer": 3,
       "explanation": "Turning the steering wheel when the car isn't moving is known as dry steering. It can cause unnecessary wear to the tyres and steering mechanism.",
@@ -1848,12 +1803,7 @@
       "question": "What does fuel-efficient driving achieve?"
     },
     {
-      "answers": [
-        "1 mm",
-        "1.6 mm",
-        "2 mm",
-        "2.6 mm"
-      ],
+      "answers": ["1 mm", "1.6 mm", "2 mm", "2.6 mm"],
       "category": 12,
       "correctAnswer": 1,
       "explanation": "Trailers and caravans may be left in storage over the winter months, and tyres can deteriorate. It’s important to check their tread depth and also their pressures and general condition. The legal tread depth of 1.6 mm applies to the central three-quarters of a tyre's breadth, over its entire circumference.",
@@ -1988,12 +1938,7 @@
       "question": "You're leaving your vehicle parked on a road and unattended. When may you leave the engine running?"
     },
     {
-      "answers": [
-        "Two times",
-        "Three times",
-        "Five times",
-        "Ten times"
-      ],
+      "answers": ["Two times", "Three times", "Five times", "Ten times"],
       "category": 11,
       "correctAnswer": 3,
       "explanation": "Tyre grip is greatly reduced in icy conditions. For this reason, you need to allow up to ten times the stopping distance you would allow on dry roads.",
@@ -2143,12 +2088,7 @@
       "question": "How can you avoid wheelspin when you're driving on an icy road?"
     },
     {
-      "answers": [
-        "The weather",
-        "The driver",
-        "The vehicle",
-        "The road"
-      ],
+      "answers": ["The weather", "The driver", "The vehicle", "The road"],
       "category": 11,
       "correctAnswer": 1,
       "explanation": "Skidding is usually caused by driver error. You should always adjust your driving to take account of the road and weather conditions.",
@@ -2171,12 +2111,7 @@
       "question": "You're driving in freezing conditions. What should you do as you approach a sharp bend?"
     },
     {
-      "answers": [
-        "The aerial",
-        "The windows",
-        "The bumper",
-        "The boot "
-      ],
+      "answers": ["The aerial", "The windows", "The bumper", "The boot "],
       "category": 11,
       "correctAnswer": 1,
       "explanation": "Driving in bad weather increases your risk of having a collision. If you absolutely have to travel, clear your lights, mirrors, number plates and windows of any snow or ice, so that you can see and be seen.",
@@ -2270,12 +2205,7 @@
       "question": "You're driving in a built-up area that has traffic-calming measures. What should you do when you approach a road hump?"
     },
     {
-      "answers": [
-        "Dry",
-        "Loose",
-        "Firm",
-        "Smooth"
-      ],
+      "answers": ["Dry", "Loose", "Firm", "Smooth"],
       "category": 11,
       "correctAnswer": 1,
       "explanation": "Poor contact with the road surface could cause one or more of the tyres to lose grip on the road. This is more likely to happen when braking in poor weather conditions and when the road has a loose, slippery or uneven surface.",
@@ -2341,12 +2271,7 @@
       "question": "You're driving along a wet road. How can you tell if your vehicle’s tyres are losing their grip on the surface?"
     },
     {
-      "answers": [
-        "In the rain",
-        "In fog",
-        "At night",
-        "In strong winds"
-      ],
+      "answers": ["In the rain", "In fog", "At night", "In strong winds"],
       "category": 11,
       "correctAnswer": 0,
       "explanation": "Extra care should be taken in wet weather. On wet roads, your stopping distance could be double that in dry conditions. ",
@@ -2588,12 +2513,7 @@
       "question": "Why must you take great care when emerging from this junction?"
     },
     {
-      "answers": [
-        "Bicycles",
-        "Buses",
-        "Motorcycles",
-        "Cars"
-      ],
+      "answers": ["Bicycles", "Buses", "Motorcycles", "Cars"],
       "category": 4,
       "content": "AB2102n1.jpg",
       "correctAnswer": 1,
@@ -2603,12 +2523,7 @@
       "question": "Which type of vehicle should you be ready to give way to as you approach this bridge? "
     },
     {
-      "answers": [
-        "Lorry",
-        "Bicycle",
-        "Car",
-        "Motorcycle"
-      ],
+      "answers": ["Lorry", "Bicycle", "Car", "Motorcycle"],
       "category": 4,
       "content": "AB2103n1.jpg",
       "correctAnswer": 0,
@@ -2937,12 +2852,7 @@
       "question": "What type of vehicle uses an amber flashing beacon on a dual carriageway?"
     },
     {
-      "answers": [
-        "Go ahead",
-        "Stop",
-        "Turn left",
-        "Turn right"
-      ],
+      "answers": ["Go ahead", "Stop", "Turn left", "Turn right"],
       "category": 4,
       "content": "AB2847n1.jpg",
       "correctAnswer": 1,
@@ -3398,12 +3308,7 @@
       "question": "You need glasses to read a vehicle number plate at the required distance. When must you wear them?"
     },
     {
-      "answers": [
-        "Half-moon",
-        "Round",
-        "Bifocal",
-        "Tinted"
-      ],
+      "answers": ["Half-moon", "Round", "Bifocal", "Tinted"],
       "category": 4,
       "correctAnswer": 3,
       "explanation": "If you're driving at night or in poor visibility, tinted lenses will reduce the efficiency of your vision by reducing the amount of light reaching your eyes.",
@@ -3758,12 +3663,7 @@
       "question": "You're approaching a roundabout. What should you do if a cyclist ahead is signalling to turn right?"
     },
     {
-      "answers": [
-        "Lorry",
-        "Tractor",
-        "Bicycle",
-        "Road-sweeper"
-      ],
+      "answers": ["Lorry", "Tractor", "Bicycle", "Road-sweeper"],
       "category": 13,
       "correctAnswer": 2,
       "explanation": "Don’t pass cyclists too closely, as they mayn• need to veer around a pothole, drain or other hazardn• be buffeted by side wind n• be made unsteady by your vehicle. nAlways leave as much room as you would for a car, and don’t cut in front of them.",
@@ -3929,12 +3829,7 @@
       "question": "Where would you see this sign?"
     },
     {
-      "answers": [
-        "Left",
-        "Right",
-        "Any direction",
-        "Straight ahead"
-      ],
+      "answers": ["Left", "Right", "Any direction", "Straight ahead"],
       "category": 13,
       "correctAnswer": 2,
       "explanation": "Cyclists approaching a roundabout in the left-hand lane may be turning right but may not have been able to get into the correct lane due to heavy traffic. They may also feel safer keeping to the left all the way around the roundabout. Be aware of them and give them plenty of room.",
@@ -3999,12 +3894,7 @@
       "question": "What should you do when you're following a learner driver who stalls at a junction?"
     },
     {
-      "answers": [
-        "Motorcycles",
-        "Bicycles",
-        "Pedestrians",
-        "Horse riders"
-      ],
+      "answers": ["Motorcycles", "Bicycles", "Pedestrians", "Horse riders"],
       "category": 13,
       "correctAnswer": 2,
       "explanation": "On a quiet country road, always be aware that there may be a hazard just around the next bend, such as a slow-moving vehicle or pedestrians. Pedestrians are advised to walk on the right-hand side of the road if there's no pavement, so they may be walking towards you on your side of the road.",
@@ -4372,12 +4262,7 @@
       "question": "You're about to reverse into a side road. What should you do if a pedestrian is waiting to cross behind your car?"
     },
     {
-      "answers": [
-        "Motorcyclists",
-        "Car drivers",
-        "Cyclists",
-        "Children"
-      ],
+      "answers": ["Motorcyclists", "Car drivers", "Cyclists", "Children"],
       "category": 13,
       "correctAnswer": 3,
       "explanation": "It may not be possible to see a small child through the rear windscreen of your vehicle. Be aware of this before you reverse. If there are children about, get out and check that it's clear before reversing. ",
@@ -4739,12 +4624,7 @@
       "question": "What should you do if you want to overtake a long, slow-moving vehicle on a busy road?"
     },
     {
-      "answers": [
-        "Cyclists",
-        "Motorcyclists",
-        "High-sided vehicles",
-        "Cars"
-      ],
+      "answers": ["Cyclists", "Motorcyclists", "High-sided vehicles", "Cars"],
       "category": 7,
       "correctAnswer": 3,
       "explanation": "Although cars are the least likely to be affected, side winds can take anyone by surprise. This is most likely to happen after overtaking a large vehicle, when passing gaps between hedges or buildings, and on exposed sections of road.",
@@ -4966,12 +4846,7 @@
       "question": "What's the reason for traffic-calming measures?"
     },
     {
-      "answers": [
-        "Green",
-        "Amber",
-        "Red",
-        "White"
-      ],
+      "answers": ["Green", "Amber", "Red", "White"],
       "category": 8,
       "correctAnswer": 2,
       "explanation": "Reflective studs are used to help you in poor visibility. Different colours are used so that you’ll know which lane you're in. These aren• red on the left-hand edge of the carriagewayn• white between lanes n• amber on the right-hand edge of the carriagewayn• green between the carriageway and slip roads.",
@@ -5532,12 +5407,7 @@
       "question": "You're joining a motorway from a slip road. How should you deal with traffic already on the motorway?"
     },
     {
-      "answers": [
-        "30 mph",
-        "50 mph",
-        "60 mph",
-        "70 mph"
-      ],
+      "answers": ["30 mph", "50 mph", "60 mph", "70 mph"],
       "category": 9,
       "correctAnswer": 3,
       "explanation": "Travelling at the national speed limit doesn't allow you to hog the right-hand lane. Always use the left-hand lane whenever possible. When leaving a motorway, get into the left-hand lane well before your exit. Reduce your speed on the slip road and look out for sharp bends or curves and traffic queuing at roundabouts.",
@@ -5646,12 +5516,7 @@
       "question": "Where are amber reflective studs found on a motorway?"
     },
     {
-      "answers": [
-        "Green",
-        "Amber",
-        "White",
-        "Red"
-      ],
+      "answers": ["Green", "Amber", "White", "Red"],
       "category": 9,
       "correctAnswer": 2,
       "explanation": "White studs are found between the lanes on motorways. They reflect back the light from your headlights. This is especially useful in bad weather, when visibility is restricted.",
@@ -5660,12 +5525,7 @@
       "question": "What colour are the reflective studs between the lanes on a motorway?"
     },
     {
-      "answers": [
-        "Amber",
-        "White",
-        "Green",
-        "Red"
-      ],
+      "answers": ["Amber", "White", "Green", "Red"],
       "category": 9,
       "correctAnswer": 2,
       "explanation": "The studs between the carriageway and the hard shoulder are normally red. These change to green where there's a slip road, helping you to identify slip roads when visibility is poor or when it's dark.",
@@ -5716,12 +5576,7 @@
       "question": "How should you position yourself when you use the emergency telephone on a motorway?"
     },
     {
-      "answers": [
-        "Green",
-        "Red",
-        "White",
-        "Amber"
-      ],
+      "answers": ["Green", "Red", "White", "Amber"],
       "category": 9,
       "correctAnswer": 1,
       "explanation": "Red studs are placed between the edge of the carriageway and the hard shoulder. Where slip roads leave or join the motorway, the studs are green.",
@@ -5730,12 +5585,7 @@
       "question": "What colour are the reflective studs between the hard shoulder and the left-hand lane of a motorway?"
     },
     {
-      "answers": [
-        "Left",
-        "Right",
-        "Centre",
-        "Either the right or centre"
-      ],
+      "answers": ["Left", "Right", "Centre", "Either the right or centre"],
       "category": 9,
       "correctAnswer": 0,
       "explanation": "On a three-lane motorway, you should travel in the left-hand lane unless you’re overtaking. This applies regardless of the speed at which you’re travelling.",
@@ -6029,12 +5879,7 @@
       "question": "When may you stop on a motorway?"
     },
     {
-      "answers": [
-        "50 mph",
-        "60 mph",
-        "70 mph",
-        "80 mph"
-      ],
+      "answers": ["50 mph", "60 mph", "70 mph", "80 mph"],
       "category": 9,
       "correctAnswer": 2,
       "explanation": "The national speed limit for a car or motorcycle on a motorway is 70 mph. Lower speed limits may be in force; for example, at roadworks. Variable speed limits also operate in some areas when the motorway is very busy. Cars or motorcycles towing trailers are subject to a lower speed limit.",
@@ -6144,12 +5989,7 @@
       "question": "How should you rejoin the motorway after a breakdown on the hard shoulder?"
     },
     {
-      "answers": [
-        "40 mph",
-        "50 mph",
-        "60 mph",
-        "70 mph"
-      ],
+      "answers": ["40 mph", "50 mph", "60 mph", "70 mph"],
       "category": 9,
       "correctAnswer": 2,
       "explanation": "If you’re towing a small, light trailer, it won’t reduce your vehicle’s performance by very much and it may not be visible in your mirrors. However, strong winds or buffeting from large vehicles might cause the trailer to snake from side to side. Be aware of your speed and don’t exceed the reduced speed limit imposed on vehicles towing trailers.",
@@ -6341,12 +6181,7 @@
       "question": "What's the meaning of this sign?"
     },
     {
-      "answers": [
-        "30 mph",
-        "50 mph",
-        "60 mph",
-        "70 mph"
-      ],
+      "answers": ["30 mph", "50 mph", "60 mph", "70 mph"],
       "category": 10,
       "correctAnswer": 3,
       "explanation": "Make sure that you know the speed limit for the road that you're on. The speed limit on a dual carriageway or motorway is 70 mph for cars and motorcycles, unless signs indicate otherwise. The speed limits for different types of vehicle are listed in The Highway Code.",
@@ -6369,12 +6204,7 @@
       "question": "There are no speed-limit signs on the road. How is a 30 mph limit generally indicated?"
     },
     {
-      "answers": [
-        "30 mph",
-        "40 mph",
-        "50 mph",
-        "60 mph"
-      ],
+      "answers": ["30 mph", "40 mph", "50 mph", "60 mph"],
       "category": 10,
       "correctAnswer": 0,
       "explanation": "The presence of street lights generally indicates that there's a 30 mph speed limit, unless signs tell you otherwise.",
@@ -6412,12 +6242,7 @@
       "question": "What should you do if you want to overtake a tractor but aren't sure that it's safe?"
     },
     {
-      "answers": [
-        "Estate car",
-        "Milk float",
-        "Delivery van",
-        "Long vehicle"
-      ],
+      "answers": ["Estate car", "Milk float", "Delivery van", "Long vehicle"],
       "category": 10,
       "correctAnswer": 3,
       "explanation": "Long vehicles might have to take a slightly different position when approaching the roundabout or going around it. This is to stop the rear of the vehicle cutting in and mounting the kerb.",
@@ -6525,12 +6350,7 @@
       "question": "What signal should you give when you're going straight ahead at a roundabout?"
     },
     {
-      "answers": [
-        "Sports car",
-        "Van",
-        "Estate car",
-        "Long vehicle"
-      ],
+      "answers": ["Sports car", "Van", "Estate car", "Long vehicle"],
       "category": 10,
       "correctAnswer": 3,
       "explanation": "A long vehicle may have to straddle lanes either on or approaching a roundabout so that the rear wheels don’t mount the kerb. nIf you’re following a long vehicle, stay well back and give it plenty of room.",
@@ -6809,12 +6629,7 @@
       "question": "You're turning right onto a dual carriageway. What should you do if the central reservation is too narrow to contain your vehicle?"
     },
     {
-      "answers": [
-        "30 mph",
-        "50 mph",
-        "60 mph",
-        "70 mph"
-      ],
+      "answers": ["30 mph", "50 mph", "60 mph", "70 mph"],
       "category": 10,
       "correctAnswer": 2,
       "explanation": "Exceeding the speed limit is dangerous and can result in you receiving penalty points on your licence. It isn't worth it. You should know the speed limit for the road that you're on by observing the road signs. Different speed limits apply if you're towing a trailer.",
@@ -6894,12 +6709,7 @@
       "question": "When may you drive over a pavement?"
     },
     {
-      "answers": [
-        "30 mph",
-        "40 mph",
-        "50 mph",
-        "60 mph"
-      ],
+      "answers": ["30 mph", "40 mph", "50 mph", "60 mph"],
       "category": 10,
       "content": "BB1207.jpg",
       "correctAnswer": 2,
@@ -6909,12 +6719,7 @@
       "question": "A single carriageway road has this sign. What's the maximum permitted speed for a car towing a trailer?"
     },
     {
-      "answers": [
-        "50 mph",
-        "40 mph",
-        "70 mph",
-        "60 mph"
-      ],
+      "answers": ["50 mph", "40 mph", "70 mph", "60 mph"],
       "category": 10,
       "correctAnswer": 3,
       "explanation": "The speed limit for cars towing caravans or trailers on dual carriageways or motorways is 60 mph. Due to the increased weight and size of the combination, you should plan further ahead. Take care in windy weather, as a strong side wind can make a caravan or large trailer unstable.",
@@ -7519,12 +7324,7 @@
       "question": "What's the meaning of this traffic sign?"
     },
     {
-      "answers": [
-        "Crossroads",
-        "Give way",
-        "Stop",
-        "Turn right"
-      ],
+      "answers": ["Crossroads", "Give way", "Stop", "Turn right"],
       "category": 5,
       "content": "AB2325.jpg",
       "correctAnswer": 2,
@@ -7714,12 +7514,7 @@
       "question": "What does this sign mean?"
     },
     {
-      "answers": [
-        "Ring road",
-        "Mini-roundabout",
-        "No vehicles",
-        "Roundabout"
-      ],
+      "answers": ["Ring road", "Mini-roundabout", "No vehicles", "Roundabout"],
       "category": 5,
       "content": "AB2344.jpg",
       "correctAnswer": 3,
@@ -7729,12 +7524,7 @@
       "question": "What does this sign mean?"
     },
     {
-      "answers": [
-        "Road narrows",
-        "Ahead only",
-        "Keep left",
-        "Minimum speed"
-      ],
+      "answers": ["Road narrows", "Ahead only", "Keep left", "Minimum speed"],
       "category": 5,
       "content": "AB2345.jpg",
       "correctAnswer": 0,
@@ -7804,12 +7594,7 @@
       "question": "What does this sign mean?"
     },
     {
-      "answers": [
-        "Side winds",
-        "Road noise",
-        "Airport",
-        "Adverse camber"
-      ],
+      "answers": ["Side winds", "Road noise", "Airport", "Adverse camber"],
       "category": 5,
       "content": "AB2360.jpg",
       "correctAnswer": 0,
@@ -8336,12 +8121,7 @@
       "question": "What does this sign mean?"
     },
     {
-      "answers": [
-        "50 mph",
-        "60 mph",
-        "40 mph",
-        "70 mph"
-      ],
+      "answers": ["50 mph", "60 mph", "40 mph", "70 mph"],
       "category": 5,
       "correctAnswer": 1,
       "explanation": "If you’re travelling on a dual carriageway that becomes a single carriageway road, reduce your speed gradually so that you aren’t exceeding the limit as you enter. There might not be a sign to remind you of the limit, so make sure you know the speed limits for different types of road and vehicle.",
@@ -8410,12 +8190,7 @@
       "question": "What should you do when you see this sign at a crossroads?"
     },
     {
-      "answers": [
-        "Motorcycles only",
-        "No cars",
-        "Cars only",
-        "No motorcycles"
-      ],
+      "answers": ["Motorcycles only", "No cars", "Cars only", "No motorcycles"],
       "category": 5,
       "content": "AB2591.jpg",
       "correctAnswer": 3,
@@ -8512,12 +8287,7 @@
       "question": "What does this sign mean?"
     },
     {
-      "answers": [
-        "Bus lane",
-        "Hazard warning",
-        "Give way",
-        "Lane marking"
-      ],
+      "answers": ["Bus lane", "Hazard warning", "Give way", "Lane marking"],
       "category": 5,
       "content": "AB2676n1.jpg",
       "correctAnswer": 1,
@@ -8994,12 +8764,7 @@
       "question": "What's a Statutory Off-Road Notification (SORN)?"
     },
     {
-      "answers": [
-        "Unlimited",
-        "£500",
-        "£1000",
-        "£5000"
-      ],
+      "answers": ["Unlimited", "£500", "£1000", "£5000"],
       "category": 3,
       "correctAnswer": 0,
       "explanation": "Driving or riding without insurance is a serious offence. As well as an unlimited fine, you may be disqualified or incur penalty points.",
@@ -9078,12 +8843,7 @@
       "question": "What must you have when you apply to renew your vehicle tax?"
     },
     {
-      "answers": [
-        "5 days",
-        "7 days",
-        "14 days",
-        "21 days"
-      ],
+      "answers": ["5 days", "7 days", "14 days", "21 days"],
       "category": 3,
       "correctAnswer": 1,
       "explanation": "You don’t have to carry your vehicle's documents wherever you go. If a police officer asks to see them and you don’t have them with you, you may be asked to produce them at a police station within 7 days.",
@@ -10143,12 +9903,7 @@
       "question": "You're carrying a child under three years old in your car. Which restraint is suitable for a child of this age?"
     },
     {
-      "answers": [
-        "6,500 kg",
-        "5,500 kg",
-        "4,500 kg",
-        "3,500 kg"
-      ],
+      "answers": ["6,500 kg", "5,500 kg", "4,500 kg", "3,500 kg"],
       "category": 14,
       "correctAnswer": 3,
       "explanation": "When you pass your driving test, you're allowed to tow a trailer up to 3,500 kg MAM without taking an extra test. nIf you want to tow a heavier trailer, you'll have to pass either a CE or DE category test, dependent on the towing vehicle.",
@@ -10199,12 +9954,7 @@
       "question": "What must you do when you hitch a trailer to a towing vehicle?"
     },
     {
-      "answers": [
-        "1 mmn",
-        "1.6 mm",
-        "2 mm",
-        "2.2 mm"
-      ],
+      "answers": ["1 mmn", "1.6 mm", "2 mm", "2.2 mm"],
       "category": 14,
       "correctAnswer": 1,
       "explanation": "Your car or small van must have a minimum tread depth of 1.6 mm across the centre of the tread and around the entire circumference. This also applies to the tyres on your trailer.",
@@ -10331,12 +10081,7 @@
       "question": "What hazard do you need to look out for as you drive under the bridge?"
     },
     {
-      "answers": [
-        "30 mph",
-        "40 mph",
-        "50 mph",
-        "60 mph"
-      ],
+      "answers": ["30 mph", "40 mph", "50 mph", "60 mph"],
       "category": "Video",
       "content": "http://appsbreaking.com/video_2.mp4",
       "correctAnswer": 0,
@@ -10361,12 +10106,7 @@
       "question": "What does the single yellow line along the side of the road mean?"
     },
     {
-      "answers": [
-        "60 mph",
-        "70 mph",
-        "50 mph",
-        "40 mph"
-      ],
+      "answers": ["60 mph", "70 mph", "50 mph", "40 mph"],
       "category": "Video",
       "content": "http://appsbreaking.com/video_3.mp4",
       "correctAnswer": 0,
@@ -10646,12 +10386,7 @@
       "question": "Why is it dangerous to overtake near a junction?"
     },
     {
-      "answers": [
-        "60 mph",
-        "30 mph",
-        "40 mph",
-        "50 mph"
-      ],
+      "answers": ["60 mph", "30 mph", "40 mph", "50 mph"],
       "category": "Video",
       "content": "http://appsbreaking.com/video_9.mp4",
       "correctAnswer": 3,
