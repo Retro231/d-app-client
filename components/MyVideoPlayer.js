@@ -2,13 +2,14 @@ import { StyleSheet, Text, View } from "react-native";
 import React, { useEffect, useRef, useState } from "react";
 import { Video, ResizeMode } from "expo-av";
 import { Button } from "@rneui/base";
+import * as FileSystem from "expo-file-system";
 
 const MyVideoPlayer = ({ id, content }) => {
   // expo-av player state
   const video = useRef(null);
   const [videoContent, setVideoContent] = useState(null);
   const [status, setStatus] = useState({});
-
+  const videoFileUrl = FileSystem.documentDirectory + content;
   const handlePress = () => {
     status.isPlaying ? video.current.pauseAsync() : video.current.playAsync();
   };
@@ -26,7 +27,7 @@ const MyVideoPlayer = ({ id, content }) => {
         <Video
           key={id}
           ref={video}
-          source={content}
+          source={{ uri: videoFileUrl }}
           style={styles.video}
           useNativeControls={false}
           resizeMode={ResizeMode.CONTAIN}

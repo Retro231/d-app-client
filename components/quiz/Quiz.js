@@ -13,19 +13,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Button } from "@rneui/themed";
 import { next, prev, resetQuiz, setRegAns } from "./quizSlice";
 import { SafeAreaView } from "react-native-safe-area-context";
-import Header from "../Header";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/Ionicons";
-import { Divider } from "@rneui/base";
 import MyVideoPlayer from "../MyVideoPlayer";
-import video2 from "./../../assets/video/video_2.mp4";
-import video3 from "./../../assets/video/video_3.mp4";
-import video4 from "./../../assets/video/video_4.mp4";
-const getVideo = (id) => {
-  const videoArray = [video2, video3, video4];
-
-  return videoArray[id];
-};
 
 const initialTime = {
   min: 0,
@@ -46,6 +36,7 @@ const Quiz = () => {
   const { question, answers, correctAnswer, mediaType, content } =
     questions[currentIndex];
   const hasUnsavedChanges = Boolean(question);
+
   // timer
   let timerInterval;
   useEffect(() => {
@@ -206,15 +197,13 @@ const Quiz = () => {
               <Image
                 height={230}
                 width={300}
-                source={{ uri: `https://i.ibb.co/Rb9V1dX/${content}` }}
+                style={{ height: 230, width: 300 }}
+                source={content}
                 alt="content"
               />
             )}
             {mediaType === "video" && content && (
-              <MyVideoPlayer
-                id={currentIndex}
-                content={getVideo(currentIndex)}
-              />
+              <MyVideoPlayer id={currentIndex} content={content} />
             )}
             <View style={styles.optionContainer}>
               {answers.map((option, index) => (

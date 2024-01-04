@@ -1,7 +1,6 @@
 import {
   View,
   Text,
-  ScrollView,
   StyleSheet,
   TouchableOpacity,
   Image,
@@ -9,9 +8,7 @@ import {
 } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-
 import categoryList from "../../api/categoryList";
-import Header from "../../components/Header";
 import ScreenTitle from "../../components/ScreenTitle";
 import { useDispatch, useSelector } from "react-redux";
 import { setQuestions, setTestState } from "../../components/quiz/quizSlice";
@@ -43,29 +40,11 @@ const CategoryBtn = ({ item }) => {
 
     dispatch(setTestState("practice"));
     navigation.navigate("QuizMenuScreen", { title: item.title });
-
-    // if (isLogedin) {
-    //   // setting quiz questions
-    //   title !== "Video"
-    //     ? dispatch(setQuestions(categoryQuestion))
-    //     : dispatch(setQuestions(videoQuestionsDB));
-    //   dispatch(setTestState("practice"));
-    //   navigation.navigate("QuizMenuScreen", { title: item.title });
-    // } else {
-    //   navigate("/login");
-    // }
   };
   return (
     <View>
       <TouchableOpacity onPress={handlePress}>
         <View style={styles.singleNav}>
-          {/* <Image
-            height={50}
-            width={50}
-            source={{
-              uri: `https://appsbreaking.com/category_image/${item.iconName}`,
-            }}
-          /> */}
           <Image style={{ width: 50, height: 50 }} source={item.iconName} />
           <Text style={styles.text}>{item.title}</Text>
         </View>

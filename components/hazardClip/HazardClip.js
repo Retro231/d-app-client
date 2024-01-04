@@ -5,40 +5,26 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Video, ResizeMode } from "expo-av";
 import Icon from "react-native-vector-icons/Ionicons";
 import { LogBox } from "react-native";
-import { useDispatch } from "react-redux";
 LogBox.ignoreLogs(["new NativeEventEmitter()"]);
 import video2 from "./../../assets/video/video_2.mp4";
 import ScreenTitle from "../ScreenTitle";
 import { Button } from "@rneui/base";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-// import { getAuth } from "firebase/auth";
-// import { db } from "../../config/firebase";
-// import { addDoc, collection, updateDoc } from "firebase/firestore";
-
 const hazard = [3, 9, 18];
 
 const HazardClip = () => {
   const navigation = useNavigation();
-  const dispatch = useDispatch();
   const route = useRoute();
   const { title } = route.params;
   const video = useRef(null);
   const [status, setStatus] = React.useState({});
-  const hasUnsavedChanges = Boolean(true);
-  const [videoDuration, setVideoDuration] = useState(null);
-  // const auth = getAuth();
-
   // d-test
-  const [isplay, setPlay] = useState(null);
-  const [playing, setPlaying] = useState(false);
   const [end, setEnd] = useState(false);
-  const [countdown, setCountDown] = useState(false);
   const [flag, setFlag] = useState([]);
   const [rate, setRate] = useState([1]);
   const [avrgRate, setAvrgRate] = useState(0);
   const [isLimitExit, setLimitExit] = useState(false);
-  const [loginRequest, showLoginRequest] = useState(false);
   const [isDataSaved, setDataSaved] = useState(false);
   const clickLimit = 15;
 
@@ -73,30 +59,6 @@ const HazardClip = () => {
     setEnd(false);
     setDataSaved(false);
   };
-  // const handleSave = () => {
-  //   const user = auth.currentUser;
-  //   const addData = async () => {
-  //     try {
-  //       const docRef = await addDoc(
-  //         collection(db, "users", user.uid, `${title}`),
-  //         {
-  //           rating: avrgRate,
-  //         }
-  //       );
-  //       // Update the timestamp field with the value from the server
-  //       const updateTimestamp = await updateDoc(docRef, {
-  //         timestamp: new Date().toGMTString(), // this does the trick!
-  //       });
-  //       console.log("Document written by user uid");
-  //       navigation.navigate("HazardScreen");
-  //     } catch (e) {
-  //       console.error("Error adding document: ", e);
-  //     }
-  //   };
-
-  //   addData();
-  // };
-
   // handle async storage
   const storeObject = async (key, newObject) => {
     try {

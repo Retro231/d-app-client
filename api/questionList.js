@@ -1723,7 +1723,7 @@ const questions = [
       "Drive slowly at school times only",
     ],
     category: 12,
-    content: require("./../assets/qimage/BB1558n2.jpg"),
+    // content: require("./../assets/qimage/BB1558n2.jpg"),
     correctAnswer: 0,
     explanation:
       "Road humps are there for a reason – to protect vulnerable road users by reducing the speed of traffic. Don’t accelerate harshly between the humps. Put the safety of others first and maintain a reduced speed throughout the zone.",

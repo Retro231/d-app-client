@@ -11,15 +11,11 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { BackHandler } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
-// import { getAuth } from "firebase/auth";s
 import ScreenTitle from "../ScreenTitle";
-import { resetQuiz } from "./quizSlice";
 import { useEffect } from "react";
 import { Divider } from "@rneui/themed";
 import Icon from "react-native-vector-icons/Ionicons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-// import { db } from "../../config/firebase";
-// import { collection, addDoc, updateDoc } from "firebase/firestore";
 
 const QuizResult = () => {
   const navigation = useNavigation();
@@ -37,14 +33,6 @@ const QuizResult = () => {
   const [wronglyAnsweredQuestions, setWronglyAnsweredQuestions] = useState([]);
 
   useEffect(() => {
-    // console.log("------------------------");
-    // questions.map((item) => {
-    //   console.log(`${item.id}--`);
-    // });
-    // console.log(regAns);
-
-    // console.log("------------------------");
-
     const correctlyAnswered = [];
     const wronglyAnswered = [];
 
@@ -61,29 +49,6 @@ const QuizResult = () => {
 
     setCorrectlyAnsweredQuestions(correctlyAnswered);
     setWronglyAnsweredQuestions(wronglyAnswered);
-
-    // save data to db
-    // const addData = async () => {
-    //   try {
-    //     const docRef = await addDoc(
-    //       collection(db, "users", user.uid, `${title}`),
-    //       {
-    //         questions,
-    //         regAns,
-    //         correctAns: correctlyAnsweredQuestions.length,
-    //         wrongAns: wronglyAnsweredQuestions.length,
-    //       }
-    //     );
-    //     // Update the timestamp field with the value from the server
-    //     const updateTimestamp = await updateDoc(docRef, {
-    //       timestamp: new Date().toGMTString(), // this does the trick!
-    //     });
-    //     console.log("Document written by user uid");
-    //   } catch (e) {
-    //     console.error("Error adding document: ", e);
-    //   }
-    // };
-    // testState !== "freeTest" && addData();
   }, []);
 
   // handle async storage

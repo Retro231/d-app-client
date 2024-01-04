@@ -1,7 +1,6 @@
 import { getDefaultMiddleware, configureStore } from "@reduxjs/toolkit";
 import appRecuder from "./appSlice";
 import quizReducer from "./components/quiz/quizSlice";
-import authReducer from "./components/auth/authSlice";
 import dbReducer from "./dbSlice";
 
 export const store = configureStore({
@@ -9,7 +8,6 @@ export const store = configureStore({
     app: appRecuder,
     quiz: quizReducer,
     db: dbReducer,
-    auth: authReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

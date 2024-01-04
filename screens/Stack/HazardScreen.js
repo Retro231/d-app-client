@@ -22,27 +22,27 @@ LogBox.ignoreLogs(["new NativeEventEmitter()"]);
 const hazardQuestionsDB = [
   {
     id: 1,
-    url: "http://appsbreaking.com/video_2.mp4",
+    url: require("./../../assets/video/video_2.mp4"),
     hazard: [3, 9, 18],
   },
   {
     id: 2,
-    url: "http://appsbreaking.com/video_2.mp4",
+    url: require("./../../assets/video/video_2.mp4"),
     hazard: [3, 9, 18],
   },
   {
     id: 3,
-    url: "http://appsbreaking.com/video_2.mp4",
+    url: require("./../../assets/video/video_2.mp4"),
     hazard: [3, 9, 18],
   },
   {
     id: 4,
-    url: "http://appsbreaking.com/video_2.mp4",
+    url: require("./../../assets/video/video_2.mp4"),
     hazard: [3, 9, 18],
   },
   {
     id: 5,
-    url: "http://appsbreaking.com/video_2.mp4",
+    url: require("./../../assets/video/video_2.mp4"),
     hazard: [3, 9, 18],
   },
 ];
@@ -71,14 +71,7 @@ const HazardBtn = ({ item }) => {
     <View>
       <TouchableOpacity onPress={handlePress}>
         <View style={styles.singleNav}>
-          {/* <Image
-            height={50}
-            width={50}
-            // source={{
-            //   uri: `https://appsbreaking.com/category_image/${item.iconName}`,
-            // }}
-            source={require(`./../../assets/catIcons/${item.iconName}`)}
-          /> */}
+          <Image height={50} width={50} source={item.iconName} />
           <Text style={styles.text}>{item.title}</Text>
         </View>
       </TouchableOpacity>

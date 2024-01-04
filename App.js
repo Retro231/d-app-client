@@ -1,42 +1,28 @@
 import "expo-dev-client";
-import { Platform, StyleSheet, View } from "react-native";
-import { Provider, useDispatch, useSelector } from "react-redux";
+import { Provider, useDispatch } from "react-redux";
 import { store } from "./store";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from "react-native-vector-icons/Ionicons";
 import Home from "./screens/BottomTab/Home";
-import Profile from "./screens/BottomTab/Profile";
-import Setting from "./screens/BottomTab/Setting";
 import Progress from "./screens/BottomTab/Progress";
 import PracticeScreen from "./screens/Stack/PracticeScreen";
 import MockScreen from "./screens/Stack/MockScreen";
 import HazardScreen from "./screens/Stack/HazardScreen";
 import { createStackNavigator } from "@react-navigation/stack";
-import HighwayCodeScreen from "./screens/Stack/HighwayCodeScreen";
 import RoadSignScreen from "./screens/Stack/RoadSignScreen";
 import Quiz from "./components/quiz/Quiz";
 import QuizMenu from "./components/quiz/QuizMenu";
-// import { getAuth } from "firebase/auth";
 import { useEffect } from "react";
-// import { collection, getDocs } from "firebase/firestore";
-// import { child, get, ref } from "firebase/database";
 import { setQuestionsDB, setVideoQuestionsDB } from "./dbSlice";
-import { ques_db } from "./config/firebase";
-import {
-  setLogin,
-  setSubscribed,
-  setUserRegInfo,
-} from "./components/auth/authSlice";
 import QuizResult from "./components/quiz/QuizResult";
 import ShowQuizResult from "./components/quiz/ShowQuizResult";
 import HazardClip from "./components/hazardClip/HazardClip";
 import ClipInfo from "./components/hazardClip/ClipInfo";
-// import questions from "./api/quesions.json";
 import questions from "./api/questionList";
 import videoQuestions from "./api/videoQuesions";
-import Test from "./screens/BottomTab/Test";
+import VideoDownload from "./components/VideoDownload";
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
@@ -85,9 +71,7 @@ const HomeTab = () => {
     >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Progress" component={Progress} />
-      {/* <Tab.Screen name="Test" component={Test} /> */}
-      {/* <Tab.Screen name="Settings" component={Setting} /> */}
-      {/* <Tab.Screen name="Profile" component={Profile} /> */}
+      <Tab.Screen name="Test" component={VideoDownload} />
     </Tab.Navigator>
   );
 };
@@ -168,13 +152,11 @@ const HomeStack = () => {
       }}
     >
       <Stack.Screen name="HomeScreen" component={HomeTab} />
-      {/* <Stack.Screen name="HomeScreen" component={QuizResult} /> */}
       <Stack.Screen name="PracticeScreen" component={PracticeScreen} />
       <Stack.Screen name="MockScreen" component={MockScreen} />
       <Stack.Screen name="HazardScreen" component={HazardScreen} />
       <Stack.Screen name="ClipInfo" component={ClipInfo} />
       <Stack.Screen name="HazardClip" component={HazardClip} />
-      <Stack.Screen name="HighwayCodeScreen" component={HighwayCodeScreen} />
       <Stack.Screen name="RoadSignScreen" component={RoadSignScreen} />
       <Stack.Screen name="QuizScreen" component={Quiz} />
       <Stack.Screen name="QuizMenuScreen" component={QuizMenu} />
